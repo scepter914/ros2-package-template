@@ -150,6 +150,8 @@ void PackageNameNode::onTimer()
 
   // Sample
   pub_data_->publish(example_interfaces::build<Int32>().data(output_.data));
+  // pub_data->publish(hoge_msgs);
+  
   RCLCPP_INFO(get_logger(), "input, output: %d, %d", input_.data, output_.data);
 }
 
