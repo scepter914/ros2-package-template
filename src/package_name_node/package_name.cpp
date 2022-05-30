@@ -23,7 +23,7 @@ PackageName::Output PackageName::update(const PackageName::Input & input)
 
   // Sample
   output.data = input.data + param_.data;
-
+  RCLCPP_WARN(rclcpp::get_logger("package_name"), "Debug: %d", 0);
   return output;
 }
 
