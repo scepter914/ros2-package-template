@@ -87,14 +87,10 @@ rcl_interfaces::msg::SetParametersResult PackageNameNode::onSetParam(
   try {
     // Node Parameter
     {
-      // Copy to local variable
-      auto p = node_param_;
+      auto & p = node_param_;
 
       // Update params
       update_param(params, "node_params.update_rate_hz", p.update_rate_hz);
-
-      // Copy back to member variable
-      node_param_ = p;
     }
 
     // Core Parameter
