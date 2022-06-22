@@ -1,14 +1,17 @@
 # ros2_package_template
 
-My ROS2 package template
+This is my ROS2 package template with Autoware.
+Original repository is <https://github.com/kenji-miyake/ros2_package_template> and customize for myself.
 
-## Prerequisite
+## Usage
+
+- Install
 
 ```sh
 brew install fd sd rename
 ```
 
-## Usage
+- Use this tempalate
 
 ```sh
 cd YOUR_ROS_WORKSPACE
@@ -24,3 +27,5 @@ rm -rf .git # When you add this to an existing repository
 # case2. If you'd like to cleanup automatically
 ./setup.fish --clean
 ```
+
+
