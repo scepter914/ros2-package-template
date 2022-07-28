@@ -95,14 +95,10 @@ rcl_interfaces::msg::SetParametersResult PackageNameNode::onSetParam(
 
     // Core Parameter
     {
-      // Copy to local variable
-      auto p = core_param_;
+      auto & p = core_param_;
 
       // Update params
       update_param(params, "core_params.data", p.data);
-
-      // Copy back to member variable
-      core_param_ = p;
 
       // Set parameter to instance
       if (package_name_) {
