@@ -7,6 +7,7 @@
 
   <!-- Parameter -->
   <arg name="config_file" default="$(find-pkg-share package_name)/config/package_name.param.yaml" />
+  <arg name="update_rate_hz" default="10.0" />
 
   <!-- Node -->
   <node pkg="package_name" exec="package_name_node" name="package_name" output="screen">
@@ -18,5 +19,6 @@
 
     <!-- Parameter -->
     <param from="$(var config_file)" />
+    <param name="update_rate_hz" value="$(var update_rate_hz)"/>
   </node>
 </launch>
