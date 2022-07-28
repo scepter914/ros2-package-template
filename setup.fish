@@ -12,7 +12,9 @@ set -l UPPER_SNAKE_CASE_PACKAGE_NAME (basename $script_dir | sed -E 's/(.*)/\U\1
 
 cd $script_dir
 sd "GIT_CONFIG_EMAIL@example.com" (git config --global user.email) $script_dir/package.xml
+sd "GIT_CONFIG_EMAIL@example.com" (git config --global user.email) $script_dir/package_autoware.xml
 sd "GIT_CONFIG_NAME" (git config --global user.name) $script_dir/package.xml
+sd "GIT_CONFIG_NAME" (git config --global user.name) $script_dir/package_autoware.xml
 
 set -l target_files (fd -t f --exclude "*.fish" --exclude "README.md")
 sd "package_name" $snake_case_package_name $target_files
