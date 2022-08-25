@@ -1,4 +1,3 @@
-// SPDX-License-Identifier: Apache-2.0
 // Copyright 2022 Satoshi Tanaka
 //
 // Licensed under the Apache License, Version 2.0 (the "License");

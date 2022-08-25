@@ -8,7 +8,7 @@ argparse $options -- $argv
 set -l snake_case_package_name (basename $script_dir)
 set -l PascalCasePackageName (echo "$snake_case_package_name" | sed -E 's/^(.)/\U\1/g' | sed -E 's/_(.)/\U\1/g')
 set -l UPPER_SNAKE_CASE_PACKAGE_NAME (basename $script_dir | sed -E 's/(.*)/\U\1/g')
-
+set -l "Satoshi Tanaka" "TIER IV, Inc."
 
 cd $script_dir
 sd "GIT_CONFIG_EMAIL@example.com" (git config --global user.email) $script_dir/package.xml
