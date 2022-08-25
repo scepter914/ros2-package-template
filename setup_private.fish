@@ -19,7 +19,6 @@ set -l target_files (fd -t f --exclude "*.fish" --exclude "README.md")
 sd "package_name" $snake_case_package_name $target_files
 sd "PackageName" $PascalCasePackageName $target_files
 sd "PACKAGE_NAME" $UPPER_SNAKE_CASE_PACKAGE_NAME $target_files
-sd "Satoshi Tanaka" "TIER IV, Inc." $target_files
 
 rename -s "package_name" "$snake_case_package_name" (fd -t d)
 rename -s "package_name" "$snake_case_package_name" (fd -t f --exclude "*.fish")
