@@ -15,11 +15,11 @@
 #ifndef PACKAGE_NAME__PACKAGE_NAME_HPP__
 #define PACKAGE_NAME__PACKAGE_NAME_HPP__
 
+#include <rclcpp/logger.hpp>
+
 #include <memory>
 #include <string>
 #include <vector>
-
-#include "rclcpp/logger.hpp"
 
 namespace package_name
 {
