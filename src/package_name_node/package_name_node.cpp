@@ -18,12 +18,6 @@
 #include <string>
 #include <vector>
 
-using namespace std::literals;
-using std::chrono::duration;
-using std::chrono::duration_cast;
-using std::chrono::nanoseconds;
-using std::placeholders::_1;
-
 namespace
 {
 template <class T>
@@ -46,9 +40,16 @@ bool update_param(
 
 namespace package_name
 {
+using namespace std::literals;
+using std::chrono::duration;
+using std::chrono::duration_cast;
+using std::chrono::nanoseconds;
+
 PackageNameNode::PackageNameNode(const rclcpp::NodeOptions & node_options)
 : Node("package_name", node_options)
 {
+  using std::placeholders::_1;
+
   // Parameter Server
   set_param_res_ =
     this->add_on_set_parameters_callback(std::bind(&PackageNameNode::onSetParam, this, _1));
