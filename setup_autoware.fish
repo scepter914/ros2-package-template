@@ -19,19 +19,20 @@ set -l target_files (fd -t f --exclude "*.fish" --exclude "README.md")
 sd "package_name" $snake_case_package_name $target_files
 sd "PackageName" $PascalCasePackageName $target_files
 sd "PACKAGE_NAME" $UPPER_SNAKE_CASE_PACKAGE_NAME $target_files
+sd "Satoshi Tanaka" "TIER IV, Inc." $target_files
 
 rename -s "package_name" "$snake_case_package_name" (fd -t d)
 rename -s "package_name" "$snake_case_package_name" (fd -t f --exclude "*.fish")
 
+mv $script_dir/PACKAGE_README.md $script_dir/README.md
 if set -q _flag_clean
-    mv $script_dir/PACKAGE_README.md $script_dir/README.md
-    rm -rf $script_dir/.git
     rm $script_dir/setup.fish
-    rm $script_dir/setup_private.fish
+    rm $script_dir/setup_autoware.fish
+    rm $script_dir/CMakeLists.txt
+    rm $script_dir/package.xml
+    mv $script_dir/CMakeLists_autoware.txt $script_dir/CMakeLists.txt
+    mv $script_dir/package_autoware.xml $script_dir/package.xml
+    rm -rf $script_dir/.git
 else
-    echo -n "Please run the following commands manually to clean up the package.
-  mv $script_dir/PACKAGE_README.md $script_dir/README.md
-  rm $script_dir/setup.fish
-  rm -rf $script_dir/.git # When you add this to an existing repository
-"
+    echo -n "Please run the commands manually to clean unused files."
 end

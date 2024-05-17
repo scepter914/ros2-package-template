@@ -13,13 +13,17 @@ If you use for Autoware development, you should use CMakeLists_autoware.txt and 
 brew install fd sd rename
 ```
 
-- Use this tempalate
+- Setup
 
-```sh
+```
 cd YOUR_ROS_WORKSPACE
 git clone git@github.com:scepter914/ros2_package_template.git YOUR_PACKAGE_NAME
 cd YOUR_PACKAGE_NAME
+```
 
+- Case 1. Use this tempalate
+
+```sh
 # case1. If you'd like to cleanup manually
 ./setup.fish
 mv PACKAGE_README.md README.md
@@ -30,4 +34,9 @@ rm -rf .git # When you add this to an existing repository
 ./setup.fish --clean
 ```
 
+- Case 2. Use this tempalate for autoware
 
+```sh
+
+./setup_autoware.fish --clean
+```
